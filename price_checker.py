@@ -11,7 +11,7 @@ def get_current_price():
     gpuPrice = prices.find('strong').text
     return gpuPrice
 
-def convert_current_price_to_int():
+def current_price_to_int():
     currentPriceToInt = []
 
     currentPriceAsArray = get_current_price().split(',')
@@ -27,7 +27,7 @@ def get_original_price():
     parent = priceWas[0].parent
     originalPrice = parent.find('span').text
 
-def convert_original_price_to_int():
+def original_price_to_int():
     originalPriceToInt = []
     
     originalPriceAsArray = get_original_price().split(',')
