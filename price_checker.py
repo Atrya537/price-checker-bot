@@ -21,18 +21,20 @@ def current_price_to_int():
 
     return (int(''.join(currentPriceToInt)))
 
-#TODO: FIX THIS (filter out dollar sign and comma to convert price to int)
 def get_original_price():
-    priceWas = doc.find_all('span', class_='price-was-data')
-    parent = priceWas[0].parent
-    originalPrice = parent.find('span').text
+    priceWas = doc.find_all('span', {'class': 'price-was-data'})[0]
+    return(priceWas.text)
 
 def original_price_to_int():
-    originalPriceToInt = []
+    intPrice = []
     
-    originalPriceAsArray = get_original_price().split(',')
+    originalPriceAsArray = list(get_original_price())
     for i in originalPriceAsArray:
-        if (',' not in i or '$' not in i):
-            originalPriceToInt.append(i)
+        if (i.isdigit()):
+            intPrice.append(i)
 
-    print(originalPriceToInt)
+    del intPrice[-2:]
+    return int(''.join(intPrice))
+
+print(original_price_to_int())
+print(current_price_to_int())
