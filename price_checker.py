@@ -36,5 +36,7 @@ def original_price_to_int():
     del intOriginalPrice[-2:]
     return int(''.join(intOriginalPrice))
 
+priceDifference = original_price_to_int() - current_price_to_int()
+
 if (original_price_to_int() > current_price_to_int()):
-    print(f'Your item is ${original_price_to_int() - current_price_to_int()} off!')
+    print(f'Your item is ${priceDifference} off!')
