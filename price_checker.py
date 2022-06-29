@@ -36,5 +36,3 @@ def original_price_to_int():
             originalPriceToInt.append(i)
 
     print(originalPriceToInt)
-
-print('test commit & push')
