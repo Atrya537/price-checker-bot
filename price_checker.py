@@ -36,3 +36,5 @@ def original_price_to_int():
             originalPriceToInt.append(i)
 
     print(originalPriceToInt)
+
+# test for changes on laptop
