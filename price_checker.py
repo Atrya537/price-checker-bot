@@ -40,3 +40,5 @@ priceDifference = original_price_to_int() - current_price_to_int()
 
 if (original_price_to_int() > current_price_to_int()):
     print(f'Your item is ${priceDifference} off!')
+else:
+    print(f'Your item is currently ${get_current_price}')
